@@ -4,7 +4,10 @@ node 'edge-node1.example.3lite.eu' {
     message => 'Configuration of edge-node1.example.3lite.eu will be applied'
   }
 
+  include apt
+
   include ntp
   include lynis
+  include hid
 }
 

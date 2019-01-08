@@ -48,9 +48,12 @@ class lynis {
     require  => [
       Package['kbtin'],
       Package['lynis']
-    ]
-  } ~> exec { 'copy-report':
-    command  => "/bin/cp /var/log/lynis.* /vagrant/${trusted['hostname']}/"
+    ],
+    notify   => Exec['copy-report']
+  }
+  exec { 'copy-report':
+    command     => "/bin/cp /var/log/lynis.* /vagrant/${trusted['hostname']}/",
+    refreshonly => true
   }
 
 }

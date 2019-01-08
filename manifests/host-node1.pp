@@ -4,7 +4,11 @@ node 'host-node1.example.3lite.eu' {
     message => 'Configuration of host-node1.example.3lite.eu will be applied'
   }
 
+  include apt
   include ntp
   include lynis
+  class { 'hid':
+    role => 'server'
+  }
 }
 
