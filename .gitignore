@@ -1,3 +1,12 @@
 .vagrant/
 host-node1/
 edge-node1/
+modules/hid/files/rootCA.pem
+modules/hid/files/sslagent.cert
+modules/hid/files/sslagent.key
+modules/hid/files/sslmanager.cert
+modules/hid/files/sslmanager.key
+rootCA.key
+rootCA.srl
+sslagent.csr
+sslmanager.csr

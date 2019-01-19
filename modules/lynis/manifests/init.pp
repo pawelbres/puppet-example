@@ -15,9 +15,9 @@ class lynis {
     }
   }
 
-  package { 'apt-transport-https':
-    ensure => 'installed'
-  }
+#  package { 'apt-transport-https':
+#    ensure => 'installed'
+#  }
 
   package { 'kbtin':
     ensure => 'installed'
@@ -28,7 +28,7 @@ class lynis {
     require => [
       Class['apt::update'],
       Apt::Source['lynis'],
-      Package['apt-transport-https']
+#      Package['apt-transport-https']
     ]
   }
 

@@ -44,6 +44,9 @@ Vagrant.configure("2") do |config|
       echo "server 2.pl.pool.ntp.org" >> /etc/ntp.conf
       echo "server 3.pl.pool.ntp.org" >> /etc/ntp.conf
       systemctl restart ntp
+      if [ ! -f "/vagrant/modules/hid/files/sslagent.cert" ]; then
+        cd /vagrant/ && bash create_certificates.sh
+      fi
       cp /vagrant/puppet.server.conf /etc/puppetlabs/puppet/puppet.conf
       cp -r /vagrant/modules /etc/puppetlabs/code/environments/production/
       cp -r /vagrant/manifests /etc/puppetlabs/code/environments/production/
