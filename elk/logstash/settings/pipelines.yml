@@ -1,0 +1,4 @@
+- pipeline.id: default
+  path.config: "/usr/share/logstash/config/default.pipeline.cfg"
+- pipeline.id: wazuh
+  path.config: "/usr/share/logstash/config/wazuh.pipeline.cfg"
